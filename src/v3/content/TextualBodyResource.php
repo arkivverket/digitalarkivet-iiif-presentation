@@ -8,7 +8,7 @@ use digitalarkivet\iiif\presentation\v3\traits\WithFormatTrait;
 use digitalarkivet\iiif\presentation\v3\traits\WithValueTrait;
 
 /**
- * Image resource.
+ * Textual body resource.
  *
  * See:
  *  - https://iiif.io/api/presentation/3.0/#b-example-manifest-response
@@ -22,8 +22,6 @@ class TextualBodyResource extends ContentResource
 
 	/**
 	 * Language.
-	 *
-	 * @var string
 	 */
 	protected ?string $language = null;
 
@@ -36,7 +34,6 @@ class TextualBodyResource extends ContentResource
 		?string $format = null,
 	) {
 		$this->value = $value;
-		// format could be : text/html
 		$this->format = $format ?? 'text/plain';
 	}
 
@@ -50,8 +47,6 @@ class TextualBodyResource extends ContentResource
 
 	/**
 	 * Set the language.
-	 *
-	 * @param string $language
 	 */
 	public function setLanguage(string $language): void
 	{
@@ -60,8 +55,6 @@ class TextualBodyResource extends ContentResource
 
 	/**
 	 * Returns the language.
-	 *
-	 * @return string
 	 */
 	public function getLanguage(): ?string
 	{

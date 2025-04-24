@@ -8,7 +8,7 @@ use digitalarkivet\iiif\presentation\v3\LabelValueItem;
 
 /**
  * Metadata.
- * @see https://iiif.io/api/presentation/3.0/#metadata
+ * @link https://iiif.io/api/presentation/3.0/#metadata
  */
 class Metadata
 {

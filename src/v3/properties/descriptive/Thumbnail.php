@@ -16,6 +16,9 @@ class Thumbnail
 	use WithDimensionsTrait { setHeight as protected; setWidth as protected; }
 	use WithFormatTrait { setFormat as protected; }
 
+	/**
+	 * Constructor.
+	 */
 	protected function __construct(
 		protected string $id,
 		protected string $type = 'Image',

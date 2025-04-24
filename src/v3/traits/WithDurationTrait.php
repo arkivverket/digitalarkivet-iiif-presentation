@@ -12,7 +12,7 @@ trait WithDurationTrait
     /**
      * Duration.
      */
-    protected null|float $duration = null;
+    protected ?float $duration = null;
 
     /**
      * Set the duration.
