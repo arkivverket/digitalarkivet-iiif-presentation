@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace digitalarkivet\iiif\presentation\v3;
 
+use digitalarkivet\iiif\presentation\v3\traits\WithAnnotationsTrait;
 use digitalarkivet\iiif\presentation\v3\traits\WithBehaviorTrait;
 use digitalarkivet\iiif\presentation\v3\traits\WithHomepageTrait;
 use digitalarkivet\iiif\presentation\v3\traits\WithLabelTrait;
@@ -27,6 +28,7 @@ use digitalarkivet\iiif\presentation\v3\traits\WithViewingDirectionTrait;
  */
 class Manifest extends Resource
 {
+	use WithAnnotationsTrait;
 	use WithBehaviorTrait;
 	use WithHomepageTrait;
 	use WithLabelTrait { setLabel as protected; }
@@ -164,6 +166,16 @@ class Manifest extends Resource
 			}
 
 			$array['items'] = $items;
+		}
+
+		if (!empty($this->annotations)) {
+			$annotations = [];
+
+			foreach ($this->annotations as $item) {
+				$annotations[] = $item->toArray();
+			}
+
+			$array['annotations'] = $annotations;
 		}
 
 		return [...parent::toArray(), ... $array];

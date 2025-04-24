@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace digitalarkivet\iiif\presentation\v3;
 
+use digitalarkivet\iiif\presentation\v3\traits\WithAnnotationsTrait;
 use digitalarkivet\iiif\presentation\v3\traits\WithBehaviorTrait;
 use digitalarkivet\iiif\presentation\v3\traits\WithDimensionsTrait;
 use digitalarkivet\iiif\presentation\v3\traits\WithDurationTrait;
@@ -26,6 +27,7 @@ use digitalarkivet\iiif\presentation\v3\traits\WithThumbnailTrait;
  */
 class Canvas extends Resource
 {
+	use WithAnnotationsTrait;
 	use WithBehaviorTrait;
 	use WithDimensionsTrait;
 	use WithDurationTrait;
@@ -51,13 +53,6 @@ class Canvas extends Resource
 	protected $items = [];
 
 	/**
-	 * Annotations.
-	 *
-	 * @var AnnotationPage[]
-	 */
-	protected $annotations = [];
-
-	/**
 	 * Constructor.
 	 */
 	public function __construct(
@@ -73,14 +68,6 @@ class Canvas extends Resource
 	public function addItem(AnnotationPage $annotationPage): void
 	{
 		$this->items[] = $annotationPage;
-	}
-
-	/**
-	 * Add item.
-	 */
-	public function addAnnotation(AnnotationPage $annotationPage): void
-	{
-		$this->annotations[] = $annotationPage;
 	}
 
 	/**
