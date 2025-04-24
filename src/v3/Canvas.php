@@ -51,6 +51,13 @@ class Canvas extends Resource
 	protected $items = [];
 
 	/**
+	 * Annotations.
+	 *
+	 * @var AnnotationPage[]
+	 */
+	protected $annotations = [];
+
+	/**
 	 * Constructor.
 	 */
 	public function __construct(
@@ -66,6 +73,14 @@ class Canvas extends Resource
 	public function addItem(AnnotationPage $annotationPage): void
 	{
 		$this->items[] = $annotationPage;
+	}
+
+	/**
+	 * Add item.
+	 */
+	public function addAnnotation(AnnotationPage $annotationPage): void
+	{
+		$this->annotations[] = $annotationPage;
 	}
 
 	/**
@@ -153,6 +168,16 @@ class Canvas extends Resource
 			}
 
 			$array['items'] = $items;
+		}
+
+		if (!empty($this->annotations)) {
+			$annotations = [];
+
+			foreach ($this->annotations as $item) {
+				$annotations[] = $item->toArray();
+			}
+
+			$array['annotations'] = $annotations;
 		}
 
 		return [...parent::toArray(), ... $array];

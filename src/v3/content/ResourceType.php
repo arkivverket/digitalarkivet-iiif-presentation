@@ -14,5 +14,6 @@ enum ResourceType: string
 	case MODEL = 'Model';
 	case SOUND = 'Sound';
 	case TEXT = 'Text';
+	case TEXTUAL_BODY = 'TextualBody';
 	case VIDEO = 'Video';
 }
