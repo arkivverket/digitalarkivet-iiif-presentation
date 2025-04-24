@@ -9,5 +9,5 @@ namespace digitalarkivet\iiif\presentation\v3;
  */
 class AnnotationCollection extends Resource
 {
-
+	// @todo: Implement AnnotationCollection resource.
 }

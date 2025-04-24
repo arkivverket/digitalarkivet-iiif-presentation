@@ -9,5 +9,5 @@ namespace digitalarkivet\iiif\presentation\v3;
  */
 class Collection extends Resource
 {
-
+	// @todo: Implement Collection resource.
 }

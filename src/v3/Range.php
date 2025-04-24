@@ -9,5 +9,5 @@ namespace digitalarkivet\iiif\presentation\v3;
  */
 class Range extends Resource
 {
-
+	// @todo: Implement Range resource.
 }
