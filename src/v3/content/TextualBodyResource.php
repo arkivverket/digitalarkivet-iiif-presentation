@@ -11,9 +11,9 @@ use digitalarkivet\iiif\presentation\v3\traits\WithValueTrait;
  * Textual body resource.
  *
  * See:
- *  - https://iiif.io/api/presentation/3.0/#b-example-manifest-response
- *  - https://www.w3.org/TR/annotation-model/#embedded-textual-body
- *  - https://github.com/Systemik-Solutions/glycerine-viewer?tab=readme-ov-file#annotation-body
+ * - https://iiif.io/api/presentation/3.0/#b-example-manifest-response
+ * - https://www.w3.org/TR/annotation-model/#embedded-textual-body
+ * - https://github.com/Systemik-Solutions/glycerine-viewer?tab=readme-ov-file#annotation-body
  */
 class TextualBodyResource extends ContentResource
 {

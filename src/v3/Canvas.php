@@ -12,6 +12,7 @@ use digitalarkivet\iiif\presentation\v3\traits\WithHomepageTrait;
 use digitalarkivet\iiif\presentation\v3\traits\WithLabelTrait;
 use digitalarkivet\iiif\presentation\v3\traits\WithMetadataTrait;
 use digitalarkivet\iiif\presentation\v3\traits\WithNavDateTrait;
+use digitalarkivet\iiif\presentation\v3\traits\WithNavPlaceTrait;
 use digitalarkivet\iiif\presentation\v3\traits\WithPartOfTrait;
 use digitalarkivet\iiif\presentation\v3\traits\WithProviderTrait;
 use digitalarkivet\iiif\presentation\v3\traits\WithRenderingTrait;
@@ -35,6 +36,7 @@ class Canvas extends Resource
 	use WithLabelTrait;
 	use WithMetadataTrait;
 	use WithNavDateTrait;
+	use WithNavPlaceTrait;
 	use WithPartOfTrait;
 	use WithProviderTrait;
 	use WithRenderingTrait;
@@ -165,6 +167,10 @@ class Canvas extends Resource
 			}
 
 			$array['annotations'] = $annotations;
+		}
+
+		if (!empty($this->navPlace)) {
+			$array['navPlace'] = $this->navPlace->toArray();
 		}
 
 		return [...parent::toArray(), ... $array];

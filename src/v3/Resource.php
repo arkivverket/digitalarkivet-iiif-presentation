@@ -31,6 +31,14 @@ abstract class Resource implements JsonSerializable
     }
 
 	/**
+	 * Returns the context for the resource.
+	 */
+	protected function getContext(): array|string
+	{
+		return self::CONTEXT;
+	}
+
+	/**
 	 * Returns an array representation of the resource.
 	 */
 	public function toArray(): array
@@ -38,7 +46,7 @@ abstract class Resource implements JsonSerializable
 		$array = [];
 
 		if ($this->isTopLevel) {
-			$array['@context'] = self::CONTEXT;
+			$array['@context'] = $this->getContext();
 		}
 
 		$array['type'] = $this->getType();
