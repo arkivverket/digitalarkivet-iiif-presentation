@@ -51,7 +51,7 @@ class NavPlace
 	/**
 	 * Adds a feature to the nav place.
 	 */
-	public function addFeature(array $geometry): void
+	public function addFeature(object $geometry): void
 	{
 		$this->features[] = [
 			'id' => "{$this->id}-feature-" . count($this->features),
